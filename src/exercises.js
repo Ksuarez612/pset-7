@@ -34,7 +34,38 @@ function endsMeet(values, n) {
 }
 
 function difference(numbers) {
-  // write your code here
+  let diff = 0;
+ let la = 0;
+ let sm = 0;
+ let count = 0;
+ if (!numbers || numbers.length <= 0) {
+   diff = undefined
+   return diff;
+ }
+ if (numbers.some(isNaN)) {
+   return undefined;
+   count = 1
+ }
+ if (count != 1) {
+   let y = Number.MIN_SAFE_INTEGER
+   for (z = 0; z < numbers.length; z++) {
+     if (numbers[z] > y) {
+       y = numbers[z];
+       la = numbers[z];
+     }
+   }
+   if (count != 1) {
+     let v = Number.MAX_SAFE_INTEGER
+     for (x = 0; x < numbers.length; x++) {
+       if (numbers[x] < v) {
+         v = numbers[x];
+         sm = numbers[x];
+       }
+     }
+     diff = la - sm;
+     return diff;
+   }
+ }
 }
 
 function max(number) {
