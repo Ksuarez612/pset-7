@@ -95,8 +95,19 @@ function max(number) {
 
 
 function middle(values) {
-  // write your code here
-}
+  let array = []
+  if (!values || values.length < 3 || values.length % 2 == 0) {
+    return [];
+  }
+  let index = (values.length/2)-1 + 0.5
+  let two_mi = values[index]
+  let one_mi = values[index - 1]
+  let three_mi = values[index + 1]
+  array.push(one_mi);
+  array.push(two_mi);
+  array.push(three_mi);
+  return array
+  }
 
 function increasing(numbers) {
   // write your code here
