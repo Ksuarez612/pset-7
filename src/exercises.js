@@ -69,8 +69,30 @@ function difference(numbers) {
 }
 
 function max(number) {
-  // write your code here
+  if (!number || number.length < 3 || number.length % 2 == 0) {
+    return undefined;
+  }
+  if (number.some(isNaN)) {
+    return undefined;
+  }
+  let fi = number[0]
+  let la = number[number.length-1]
+  let mi = number[((number.length/2)-1) + 0.5]
+  if ((fi > la) && (fi > mi)) {
+    return fi;
+  }
+  else if ((mi > la) && (mi > fi)) {
+    return mi;
+  }
+  else if ((la > fi) && (la > mi)) {
+    return la;
+  }
+  else {
+    return fi;
+  }
 }
+
+
 
 function middle(values) {
   // write your code here
